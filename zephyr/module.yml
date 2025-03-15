@@ -1,0 +1,6 @@
+name: partition_hex
+build:
+  cmake: .
+  kconfig: Kconfig
+  sysbuild-cmake: .
+  sysbuild-kconfig: Kconfig

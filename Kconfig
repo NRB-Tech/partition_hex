@@ -1,0 +1,36 @@
+# Copyright (c) 2025 NRB Tech Ltd.
+#
+# SPDX-License-Identifier: MIT
+
+menuconfig PARTITION_HEX
+	bool "Enable partition hex file generation"
+	help
+	  Enable functionality for generating and including partition hex files
+	  in the build process. This is typically used for provisioning data
+	  and other partition-specific content.
+
+if PARTITION_HEX
+
+config PARTITION_HEX_PARTITIONS
+	string "Partitions to generate partition hex files for"
+	help
+	  Partitions to generate partition hex files for. The partitions must have the same name as in
+	  the partition manager configuration, and must be separated by semicolons.
+
+config PARTITION_HEX_COMMANDS
+	string "Commands to generate partition hex files"
+	help
+	  Commands to generate the partition hex files. Each command will be passed the following
+	  arguments:
+	  --address <address>
+	  --output <output file>
+	  --max-size <max size>
+	  Multiple commands can be specified, separated by semicolons.
+
+config PARTITION_HEX_DEPENDENCIES
+	string "Dependencies for partition hex files"
+	help
+	  Dependencies for the partition hex files. Each dependency will be added to the partition hex
+	  generation target as a dependency.
+
+endif # PARTITION_HEX 

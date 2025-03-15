@@ -1,0 +1,22 @@
+{
+  "device_id": "PART123456",
+  "serial_number": "SN00012345",
+  "manufacturing_date": "2024-04-15",
+  "hw_version": "1.0.0",
+  "calibration_data": {
+    "temperature_offset": 1.5,
+    "pressure_scaling": 0.98,
+    "sensor_parameters": [1.02, 0.99, 1.01]
+  },
+  "features": {
+    "bluetooth": true,
+    "wifi": false,
+    "usb": true
+  },
+  "region_code": "US",
+  "default_config": {
+    "power_level": 3,
+    "sleep_timeout_ms": 300000,
+    "display_brightness": 80
+  }
+} 
