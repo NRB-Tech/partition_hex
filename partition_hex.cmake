@@ -95,10 +95,5 @@ function(create_partition_hex partition_name generate_command)
       ${partition_name}_PM_TARGET
       ${partition_name}_target
       )
-
-    if(NCS_SYSBUILD_PARTITION_MANAGER)
-      # When using sysbuild, ensure the hex file is included in final build
-      sysbuild_add_hex_file(${PARTITION_HEX} ${partition_name}_target)
-    endif()
   endif()
 endfunction() 
