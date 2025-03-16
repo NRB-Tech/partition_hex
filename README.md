@@ -29,6 +29,8 @@ Now run `west update`. The module will be installed and used automatically durin
 
 ## Configuration
 
+### Kconfig
+
 The module can be configured through Kconfig options:
 
 | Option | Description |
@@ -43,15 +45,32 @@ Each command will be provided with these arguments:
 - `--output <output file>` - The output file path
 - `--max-size <max size>` - The maximum size of the partition
 
-## Usage Example
+For example, in your project's `prj.conf` or `sysbuild.conf` (if using sysbuild; prefix configs below with SB_):
 
-In your project's `prj.conf` or `sysbuild.conf` (if using sysbuild; prefix configs below with SB_):
-
-```
+```kconfig
 CONFIG_PARTITION_HEX=y
 CONFIG_PARTITION_HEX_PARTITIONS="app_provision"
 CONFIG_PARTITION_HEX_COMMANDS="\${PYTHON_EXECUTABLE} \${APP_DIR}/scripts/generate_hex.py --json-file \${APPLICATION_CONFIG_DIR}/provision_data.json --prepend-length"
 CONFIG_PARTITION_HEX_DEPENDENCIES="\${APPLICATION_CONFIG_DIR}/provision_data.json"
+```
+
+### Partition manager
+
+In your pm_static.yml file, add a partition with the same name you configured, for example:
+
+```yaml
+app:
+  address: 0x0
+  region: flash_primary
+  size: 0x7d000
+app_provision:
+  address: 0x7d000
+  region: flash_primary
+  size: 0x1000
+settings_storage:
+  address: 0x7e000
+  region: flash_primary
+  size: 0x2000
 ```
 
 ## Requirements
