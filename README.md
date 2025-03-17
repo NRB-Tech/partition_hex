@@ -73,6 +73,8 @@ settings_storage:
   size: 0x2000
 ```
 
+See [the example](example/README.md) for a full example.
+
 ## Requirements
 
 - Zephyr RTOS (tested with Zephyr version 3.7 and later)
