@@ -1,6 +1,6 @@
 # Partition Hex
 
-A Zephyr module that simplifies creating and including partition hex files in the build process, typically used for device provisioning data and other partition-specific content.
+A Zephyr module for nRF Connect SDK's Partition Manager that simplifies creating and including partition hex files in the build process, typically used for device provisioning data and other partition-specific content.
 
 ## Overview
 
@@ -13,7 +13,7 @@ It's particularly useful for provisioning data that needs to be generated during
 
 ## Installation
 
-1. Add this repository as a module in your Zephyr application:
+1. Add this repository as a module in your NCS application:
 
 ```bash
 # Add to your west.yml
