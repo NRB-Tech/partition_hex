@@ -33,8 +33,8 @@ python generate_hex.py \
 ```
 CONFIG_PARTITION_HEX=y
 CONFIG_PARTITION_HEX_PARTITIONS="app_provision"
-CONFIG_PARTITION_HEX_COMMANDS="${PYTHON_EXECUTABLE} ${APP_DIR}/modules/partition_hex/example/generate_hex.py --json-file ${APPLICATION_CONFIG_DIR}/provisioning_data.json --magic 0x57FA57FA --prepend-length"
-CONFIG_PARTITION_HEX_DEPENDENCIES="${APPLICATION_CONFIG_DIR}/provisioning_data.json"
+CONFIG_PARTITION_HEX_COMMANDS="\${PYTHON_EXECUTABLE} \${APP_DIR}/modules/partition_hex/example/generate_hex.py --json-file \${APPLICATION_CONFIG_DIR}/provisioning_data.json --magic 0x57FA57FA --prepend-length"
+CONFIG_PARTITION_HEX_DEPENDENCIES="\${APPLICATION_CONFIG_DIR}/provisioning_data.json"
 ```
 
 ## Requirements

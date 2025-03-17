@@ -48,7 +48,8 @@ def main() -> None:
     # Convert to binary
     try:
         # This is just an example - in a real implementation,
-        # you would serialize the data in a more meaningful way
+        # you would serialize the data using e.g. protobuf or
+        # some other serialization format.
         serialized: bytes = json.dumps(data).encode('utf-8')
     except Exception as e:
         print(f"Error serializing data: {e}")
